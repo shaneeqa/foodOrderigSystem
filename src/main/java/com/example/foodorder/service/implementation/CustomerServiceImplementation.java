@@ -20,4 +20,26 @@ public class CustomerServiceImplementation implements CustomerService {
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
+
+    @Override
+    public Customer saveCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    @Override
+    public Customer getCustomerById(Long customerId) {
+        return customerRepository.findById(customerId).get();
+    }
+
+    @Override
+    public Customer updateCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    @Override
+    public void deleteCustomerById(Long customerId) {
+        customerRepository.deleteById(customerId);
+    }
+
+
 }

@@ -10,7 +10,8 @@ import java.util.List;
 @Table(name="orders")
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="order_id")
     private Long orderId;
     @Column(name="order_date")
     private Date orderDate;
@@ -20,7 +21,7 @@ public class Order {
     private OrderStatus orderStatus;
 
     @ManyToOne
-    @JoinColumn(name="customerId", referencedColumnName = "customerId")
+    @JoinColumn(name="customer_id"/*, referencedColumnName = "customerId"*/)
     private Customer customer;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)

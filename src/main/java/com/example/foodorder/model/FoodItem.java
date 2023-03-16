@@ -6,7 +6,8 @@ import jakarta.persistence.*;
 @Table(name="food_item")
 public class FoodItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="item_id")
     private Long itemId;
     @Column(name="item_name")
     private String itemName;
@@ -18,7 +19,7 @@ public class FoodItem {
     private boolean availability;
     //image
     @ManyToOne
-    @JoinColumn(name="categoryId", referencedColumnName = "categoryId")
+    @JoinColumn(name="category_id")
     private FoodCategory foodCategory;
 
     @OneToOne(mappedBy = "foodItem", cascade = CascadeType.ALL)

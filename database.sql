@@ -48,3 +48,8 @@ primary key(line_number),
 foreign key(customer_id) references customer(customer_id),
 foreign key(order_id) references orders(order_id)
 );
+
+drop table orders, order_line;
+
+alter table customer
+modify column customer_id int;

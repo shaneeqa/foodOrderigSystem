@@ -9,7 +9,8 @@ import java.util.List;
 @Table(name="food_category")
 public class FoodCategory {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="category_id")
     private Long categoryId;
     @Column(name="category_name")
     private String categoryName;

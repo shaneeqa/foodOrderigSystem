@@ -7,15 +7,16 @@ import org.aspectj.weaver.ast.Or;
 @Table(name="order_line")
 public class OrderLine {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="line_number")
     private Long lineNumber;
 
     @OneToOne
-    @JoinColumn(name="foodItemId", referencedColumnName = "itemId")
+    @JoinColumn(name="item_id")
     private FoodItem foodItem;
 
     @ManyToOne
-    @JoinColumn(name="orderId", referencedColumnName = "orderId")
+    @JoinColumn(name="order_id")
     private Order order;
     @Column(name="quantity")
     private Integer quantity;
