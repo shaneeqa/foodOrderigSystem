@@ -1,0 +1,53 @@
+food item
+==========
+item_id		string
+title		string
+description	string
+price		number - decimal
+image		//
+category
+   category_id	string	
+availability	boolean
+
+food category
+===========
+category_id	string
+title		string
+image		//
+availablity	boolean
+
+
+customer
+======
+customer_id	string
+name		string
+address		string
+telephone	integer	
+
+order
+======
+order_id	string
+customer
+   customer_id	string
+order_date	date
+total_price	decimal
+status		selection - enum
+
+
+order line
+======
+serial_id	integer
+order
+   order_id	string
+food
+   item_id	string
+quantity	integer
+
+
+customer
+===========
+customer_id
+name
+address
+telephone
+
